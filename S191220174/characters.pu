@@ -1,0 +1,60 @@
+@startuml
+
+interface Sorter{
+    void load()
+    void sort1()
+    void sort2()
+    void getPlan()
+}
+class MonsterSorter implements Sorter{
+    int[] a
+    String plan
+
+    void swap()
+    void quickSort()
+} 
+class Snake{
+    Minions[] m
+    Snake theSnake
+    Sorter sorter
+
+    Snake getTheSnake()
+    void setSorter()
+    String lineup()
+    String[] parsePlan()
+    void execute()
+}
+class Position{
+    Linable linable
+    void setLinable()
+}
+class Matrix{
+    int wide
+    int high
+    Position[][] positions
+    Linable get()
+    void put() 
+    String toString()
+    Lineable toArray()
+}
+interface Linable{
+    void setPosition()
+
+    Position getPosition()
+
+    int getValue()
+}
+class Minions implements Linable{
+    int r
+    int g
+    int b
+    Position position
+
+
+    Minions getMinionByRank()
+    int rank()
+    void swapPosition()
+}
+Position --+ Matrix
+
+@enduml

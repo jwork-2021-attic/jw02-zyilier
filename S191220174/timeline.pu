@@ -1,0 +1,21 @@
+@startuml
+
+actor theGreezer as greezer
+entity Line as line
+entity log as log
+
+line-[#Blue]>line:put
+greezer-[#Blue]>greezer:getTheGeezer
+greezer-[#Blue]>greezer:setSorter
+greezer-[#Red]>line:lineup
+line-[#Blue]>line:toArray
+line-[#Blue]>line:setRanks
+line-[#Red]>greezer:给予参数ranks
+greezer-[#Blue]>greezer:sort
+greezer-[#Blue]>greezer:parsePlan
+greezer-[#Red]>line:execute
+line-[#Blue]>line:swapPosition
+line-[#Red]>log:toString
+log-[#Blue]>log:write
+
+@enduml
